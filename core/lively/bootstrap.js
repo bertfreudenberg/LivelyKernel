@@ -908,17 +908,23 @@
     // activate loading on ios 5
     var libsFile = /*useMinifiedLibs ? 'core/lib/lively-libs.js' :*/ 'core/lib/lively-libs-debug.js',
         libsFiles = [libsFile],
+
         bootstrapFiles = (function() {
             var normalBootstrapFiles = [
+                'node_modules/lively.lang/lib/base.js',
+                'node_modules/lively.lang/lib/events.js',
+                'node_modules/lively.lang/lib/collection.js',
+                'node_modules/lively.lang/lib/function.js',
+                'node_modules/lively.lang/lib/string.js',
+                'node_modules/lively.lang/lib/number.js',
+                'node_modules/lively.lang/lib/date.js',
+                'node_modules/lively.lang/lib/object.js',
+                'node_modules/lively.lang/lib/messenger.js',
+                'node_modules/lively.lang/lib/worker.js',
+                'core/lively/lang/init.js',
+
                 'core/lively/Migration.js',
                 'core/lively/JSON.js',
-                'core/lively/lang/Object.js',
-                'core/lively/lang/Function.js',
-                'core/lively/lang/String.js',
-                'core/lively/lang/Array.js',
-                'core/lively/lang/Number.js',
-                'core/lively/lang/Date.js',
-                'core/lively/lang/Worker.js',
                 'core/lively/lang/LocalStorage.js',
                 'core/lively/defaultconfig.js',
                 'core/lively/Base.js',
@@ -927,6 +933,7 @@
                 ["core/lib/escodegen.browser.js", "core/lively/ast/BootstrapDebugger.js"].concat(normalBootstrapFiles) :
                 normalBootstrapFiles;
         })(),
+
         codeBase = (function findCodeBase() {
             var codeBase = Global.Config && Config.codeBase,
                 parentDir;
@@ -955,6 +962,7 @@
             console.log('Codebase is ' + codeBase);
             return Config.codeBase = codeBase;
         })(),
+
         rootPath = (function findRootPath() {
             var rootPath = Global.Config && Config.rootPath;
             if (rootPath) return rootPath;
