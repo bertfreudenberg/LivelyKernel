@@ -913,12 +913,12 @@
             var normalBootstrapFiles = [
                 'node_modules/lively.lang/lib/base.js',
                 'node_modules/lively.lang/lib/events.js',
+                'node_modules/lively.lang/lib/object.js',
                 'node_modules/lively.lang/lib/collection.js',
                 'node_modules/lively.lang/lib/function.js',
                 'node_modules/lively.lang/lib/string.js',
                 'node_modules/lively.lang/lib/number.js',
                 'node_modules/lively.lang/lib/date.js',
-                'node_modules/lively.lang/lib/object.js',
                 'node_modules/lively.lang/lib/messenger.js',
                 'node_modules/lively.lang/lib/worker.js',
                 'core/lively/lang/init.js',
